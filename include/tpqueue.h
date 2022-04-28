@@ -63,7 +63,6 @@ T TPQueue<T>::pop() {
   T content = head -> content;
   delete head;
   head = tmp;
-  return content; 
 }
 
 #endif  // INCLUDE_TPQUEUE_H_
