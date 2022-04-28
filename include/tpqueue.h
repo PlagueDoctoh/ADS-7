@@ -5,7 +5,7 @@
 template<typename T>
 class TPQueue {
   // реализация шаблона очереди с приоритетом на связанном списке
-  private
+  private:
   struct ITEM {
     T content;
     ITEM * next;
@@ -56,13 +56,14 @@ void TPQueue <T>::push(const T& content) {
   }
 }
 template < typename T >
-T TPQueue<T>::pop() { 
+T TPQueue<T>::pop() {
   ITEM * tmp = head -> next;
   if (tmp)
     tmp -> prev = nullptr;
   T content = head -> content;
   delete head;
   head = tmp;
+  return content;
 }
 
 #endif  // INCLUDE_TPQUEUE_H_
